@@ -27,11 +27,9 @@ router.post(
 );
 router.post("/user/login", loginUser);
 router.get("/refresh-token", isAuthenticatedUser, refreshToken);
-
 router.get("/me", isAuthenticatedUser, getUserProfile);
 router.put("/password/update", isAuthenticatedUser, updatePassword);
 router.post("/me/update", isAuthenticatedUser, updateUserProfile);
-// router.get("/logout", isAuthenticatedUser, logoutUser);
 
 router.get(
 	"/admin/users",

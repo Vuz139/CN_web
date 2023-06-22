@@ -1,8 +1,8 @@
-const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
+const catchAsyncErrors = require("../middleWares/catchAsyncErrors");
 const User = require("../models/user.model");
 const ErrorHandler = require("../utils/errorHandler");
 const sendToken = require("../utils/jwtToken");
-
+const { query } = require("../db/database");
 // register a new user => api/v1/user/register
 exports.register = async (req, res, next) => {
 	const user = new User(req.body);
@@ -18,7 +18,18 @@ exports.register = async (req, res, next) => {
 		// next(new ErrorHandler(err.message, err.statusCode));
 	}
 };
-
+// refresh token => api/v1/refresh-token
+exports.refreshToken = catchAsyncErrors(async (req, res, next) => {
+	const user = req.user;
+	// console.log(user);
+	// check if user exists
+	try {
+		delete user.password;
+		sendToken(user, 200, res);
+	} catch (err) {
+		return next(new ErrorHandler("Invalid email or password", 401));
+	}
+});
 // login a user => api/v1/user/login
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 	const { email, password } = req.body;
@@ -44,35 +55,16 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 		return next(new ErrorHandler("Invalid email or password", 401));
 	}
 });
-// refresh token => api/v1/refresh-token
-exports.refreshToken = catchAsyncErrors(async (req, res, next) => {
-	const user = req.user;
-	console.log(user);
-	// check if user exists
-	try {
-		delete user.password;
-		sendToken(user, 200, res);
-	} catch (err) {
-		return next(new ErrorHandler("Invalid email or password", 401));
-	}
-});
 
 // add avatar user
 exports.updateAvatar = catchAsyncErrors(async (req, res) => {
 	const path = req.file.filename;
 	req.user.avatar = path;
-	res.send(await req.user.update());
+	const sql = "UPDATE users SET avatar = ? WHERE id = ?";
+	const params = [path, req.user.id];
+	const kq = await query(sql, params);
+	res.send(req.user.avatar);
 });
-
-// // forgot password => api/v1/password/forgot
-// exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
-// 	// todo
-// });
-
-// // reset password => api/v1/password/reset
-// exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
-// 	// todo
-// });
 
 // get current logged in user details => api/v1/me
 exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {

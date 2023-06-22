@@ -19,15 +19,14 @@ services:
             - 3306
     backend:
         build:
-            context: .
+            context: ./CNWEB_46_backend
             dockerfile: Dockerfile
         restart: unless-stopped
         env_file:
             - .env
-        command: npm run dev
-        volumes:
-            - .:/app
-            - ./uploads:/app/uploads
+        # volumes:
+        #     - ./CNWEB_46_backend:/app
+        #     - ./CNWEB_46_backend/uploads:/app/uploads
         ports:
             - "${PORT}:4001"
         depends_on:
@@ -42,9 +41,11 @@ services:
             NODE_ENV: "${NODE_ENV}"
             JWT_SECRET: "${JWT_SECRET}"
             JWT_EXPIRES_IN: "${JWT_EXPIRES_IN}"
+        expose: 
+            - 4001
     frontend:
         build:
-            context: ../CNWEB_46_frontend
+            context: ./cn_web_frontend
             dockerfile: Dockerfile
         restart: unless-stopped
         ports:

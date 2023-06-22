@@ -1,0 +1,151 @@
+.userOrder {
+	padding: 8px;
+	background-color: #f5f5fa;
+}
+
+.userOrder__title {
+	margin: 12px 0;
+	font-size: 1.8rem;
+	font-weight: 600;
+}
+.userOrder__status {
+	font-size: 1.4rem;
+	width: 100%;
+	display: flex;
+	background-color: #fff;
+	border-radius: 4px;
+}
+.userOrder__status__item {
+	color: #adadb6;
+	font-weight: 600;
+	padding: 10px 0;
+	flex: 1;
+	text-align: center;
+	cursor: pointer;
+}
+.userOrder__status__item.onActive {
+	color: #0d5cb6;
+	border-bottom: 2px solid #0d5cb6;
+}
+.userOrder__list {
+	margin-top: 12px;
+}
+.userOrder__item {
+	margin-bottom: 12px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+}
+.userOrder__item__status {
+	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #ccc;
+}
+/* .userOrder__products {
+	display: flex;
+} */
+.userOrder__product {
+	padding: 8px;
+	margin-bottom: 4px;
+	display: flex;
+	gap: 8px;
+	border-bottom: 1px solid #ccc;
+}
+.order__product__img {
+	position: relative;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	overflow: hidden;
+	padding: 2px;
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+}
+.order__product__img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.order__product__amount {
+	position: absolute;
+	padding: 4px;
+	bottom: 0;
+	right: 0;
+	background-color: #f5f5fa;
+	font-size: 1.2rem;
+}
+.order__product__body {
+	flex: 1;
+	justify-content: flex-start;
+}
+.order__product__body p {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	text-align: left;
+	font-size: 1.4rem;
+}
+.order__product__price {
+	font-size: 1.6rem;
+	font-weight: 500;
+}
+.userOrder__item__price {
+	text-align: right;
+	font-size: 1.4rem;
+	margin-top: 4px;
+}
+.userOder__item__total {
+	font-weight: 600;
+}
+.userOrder__address p {
+	font-weight: 600;
+	text-align: left;
+	font-size: 1.4rem;
+	color: black;
+}
+.userOrder__action {
+	position: relative;
+	text-align: right;
+}
+
+/* orders */
+.order-container {
+	font-size: 1.2rem;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 1.6rem;
+}
+
+.order-info {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 8px 10px;
+	color: black;
+	font-size: 1.6rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 8px 10px;
+	font-weight: 600;
+}
+
+.order-actions {
+	display: flex;
+	justify-content: flex-end;
+}
+.order-action-accept {
+	padding: 8px;
+	background-color: rgb(138, 208, 33);
+	border-radius: 8px;
+	border: none;
+}
+.order-action-cancel {
+	padding: 8px;
+	background-color: rgb(158, 101, 101);
+	border-radius: 8px;
+	border: none;
+	margin: 0 4px;
+}

@@ -1,0 +1,16 @@
+export const categories = [
+	"Đồ Chơi - Mẹ & Bé",
+	"NGON",
+	"Điện thoại - Máy tính Bảng",
+	"Làm Đẹp - Sức Khỏe",
+	"Điện Gia Dụng",
+	"Thời Trang Nữ",
+	"Thời Trang Nam",
+	"Giày - Dép nữ",
+	"Túi thời trang nữ",
+	"Giày - Dép nam",
+	"Đồng hồ và Trang sức",
+	"Bách Hóa Online",
+	"Thể Thao - Dã Ngoại",
+	"Khác",
+];

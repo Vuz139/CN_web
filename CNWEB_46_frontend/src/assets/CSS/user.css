@@ -1,0 +1,56 @@
+.user_page {
+	display: flex;
+	font-size: 1.6rem;
+}
+.user_page__form {
+	max-width: 1200px;
+	width: 80vw;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	border: 1px solid #ccc;
+	padding: 12px 16px;
+	border-radius: 8px;
+	box-shadow: 1px 1px 1px rgba(0.2, 0.2, 0.2, 0.2);
+}
+.user_page__form__avatar {
+	margin: auto;
+	position: relative;
+	display: inline-block;
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid #333;
+}
+.user_page__form__avatar img {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+
+	z-index: -1;
+}
+.user_page__form__avatar label {
+	color: aliceblue;
+	position: absolute;
+	font-weight: 600;
+	box-shadow: 1px 1px 1px rgba(0.2, 0.2, 0.2, 0.2);
+	bottom: 0;
+	left: 0;
+	cursor: pointer;
+	background: #333;
+	width: 100%;
+	text-align: center;
+}
+.user_page__form__item {
+	margin: 8px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	font-size: 2.2rem;
+}
+.user_page__form__item input {
+	font-size: 2rem;
+	padding: 12px;
+}

@@ -1,0 +1,45 @@
+.authContainer {
+	display: flex;
+	margin: 12px auto;
+	max-width: 1200px;
+	position: relative;
+}
+
+.authContainer section {
+	flex: 1;
+	padding: 12px;
+	overflow: auto;
+	height: 75vh;
+	border: 1px solid #ccc;
+}
+.authContainer section::-webkit-scrollbar {
+	width: 12px;
+}
+.authSidebarWrapper {
+	animation: fadeIn 0.3s linear;
+}
+.authSidebar__arrow {
+	font-size: 2rem;
+	padding: 4px;
+	background-color: rgb(27, 232, 255);
+	border-radius: 8px;
+	cursor: pointer;
+}
+.authSidebar__list {
+	margin-top: 8px;
+}
+.authSidebar__item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 2rem;
+	font-weight: 600;
+	padding: 1rem 1rem;
+}
+.authSidebar__item span {
+	animation: fadeIn 0.5s linear;
+}
+.authSidebar__item:hover {
+	background-color: antiquewhite;
+	cursor: pointer;
+}
